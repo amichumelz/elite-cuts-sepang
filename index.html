@@ -20,8 +20,9 @@
             <h1 class="text-2xl font-black tracking-tighter uppercase italic">Elite<span class="text-amber-600">Cuts</span></h1>
             <div class="space-x-6 hidden md:flex items-center font-bold text-xs uppercase tracking-widest">
                 <a href="#catalogue" class="hover:text-amber-600">Catalogue</a>
-                <a href="#pricing" class="hover:text-amber-600">Pricing</a>
+                <a href="#pricing" class="hover:text-amber-600">Services</a>
                 <a href="#products" class="hover:text-amber-600">Products</a>
+                <a href="#contact" class="hover:text-amber-600">Book</a>
                 <button onclick="openWhatsApp()" class="bg-slate-900 text-white px-5 py-2 rounded-lg hover:bg-amber-600 transition shadow-md">Book Now</button>
             </div>
         </div>
@@ -30,12 +31,12 @@
     <header class="pt-40 pb-20 px-6 dark-bg text-white text-center">
         <div class="max-w-4xl mx-auto">
             <h2 class="text-5xl md:text-7xl font-extrabold mb-6 leading-tight uppercase tracking-tighter">Mastering The <br><span class="text-transparent bg-clip-text gold-gradient">Modern Look.</span></h2>
-            <p class="text-slate-400 text-lg mb-4 italic">Professional Barber Services in Sepang & Selangor.</p>
+            <p class="text-slate-400 text-lg mb-4 italic text-balance">Premium Grooming in Sepang & Selangor.</p>
             <div class="flex flex-wrap justify-center gap-4 mb-10">
                 <span class="bg-slate-800 px-4 py-2 rounded-full text-xs font-bold uppercase tracking-widest border border-slate-700"><i class="fas fa-home mr-2 text-amber-500"></i> House Calls</span>
                 <span class="bg-slate-800 px-4 py-2 rounded-full text-xs font-bold uppercase tracking-widest border border-slate-700"><i class="fas fa-cut mr-2 text-amber-500"></i> Studio Sessions</span>
             </div>
-            <button onclick="openWhatsApp()" class="bg-amber-600 text-white px-10 py-4 rounded-full font-bold text-lg hover:scale-105 transition shadow-2xl">Check Availability</button>
+            <button onclick="openWhatsApp()" class="bg-amber-600 text-white px-10 py-4 rounded-full font-bold text-lg hover:scale-105 transition shadow-2xl uppercase tracking-widest">Secure Your Slot</button>
         </div>
     </header>
 
@@ -45,9 +46,9 @@
             <p class="text-slate-500 italic mt-4">Precision cuts designed for your unique style.</p>
         </div>
         
-        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 text-center md:text-left">
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             <div class="bg-white rounded-2xl overflow-hidden shadow-lg card-hover border border-slate-100">
-                <img src="images/undercut.jpg" alt="Undercut Style" class="w-full h-64 object-cover bg-slate-200">
+                <img src="images/undercut.jpg" alt="Undercut" class="w-full h-64 object-cover bg-slate-200">
                 <div class="p-6">
                     <h4 class="font-bold text-xl mb-2 text-amber-600 uppercase italic">1. Undercut</h4>
                     <p class="text-slate-500 text-sm">Sides and back are cut thin with a longer top. Offers a modern and neat style.</p>
@@ -55,98 +56,112 @@
             </div>
 
             <div class="bg-white rounded-2xl overflow-hidden shadow-lg card-hover border border-slate-100">
-                <img src="images/fade.jpg" alt="Fade Cut Style" class="w-full h-64 object-cover bg-slate-200">
+                <img src="images/fade.jpg" alt="Fade Cut" class="w-full h-64 object-cover bg-slate-200">
                 <div class="p-6">
                     <h4 class="font-bold text-xl mb-2 text-amber-600 uppercase italic">2. Skin Fade</h4>
-                    <p class="text-slate-500 text-sm">Layered cut that tapers down to the skin. A clean and professional choice.</p>
+                    <p class="text-slate-500 text-sm">Precision layering from skin to top. A clean and professional choice for corporate or daily styles.</p>
                 </div>
             </div>
 
             <div class="bg-white rounded-2xl overflow-hidden shadow-lg card-hover border border-slate-100">
-                <img src="images/crewcut.jpg" alt="Crew Cut Style" class="w-full h-64 object-cover bg-slate-200">
+                <img src="images/crewcut.jpg" alt="Crew Cut" class="w-full h-64 object-cover bg-slate-200">
                 <div class="p-6">
                     <h4 class="font-bold text-xl mb-2 text-amber-600 uppercase italic">3. Crew Cut</h4>
-                    <p class="text-slate-500 text-sm">Short and simple cut. Easy to maintain while providing a tidy appearance.</p>
-                </div>
-            </div>
-
-            <div class="bg-white rounded-2xl overflow-hidden shadow-lg card-hover border border-slate-100">
-                <img src="images/frenchcrop.jpg" alt="French Crop Style" class="w-full h-64 object-cover bg-slate-200">
-                <div class="p-6">
-                    <h4 class="font-bold text-xl mb-2 text-amber-600 uppercase italic">4. French Crop</h4>
-                    <p class="text-slate-500 text-sm">Short top with fringe brushed forward. Modern, trendy, and minimal.</p>
-                </div>
-            </div>
-
-            <div class="bg-white rounded-2xl overflow-hidden shadow-lg card-hover border border-slate-100">
-                <img src="images/buzzcut.jpg" alt="Buzz Cut Style" class="w-full h-64 object-cover bg-slate-200">
-                <div class="p-6">
-                    <h4 class="font-bold text-xl mb-2 text-amber-600 uppercase italic">5. Buzz Cut</h4>
-                    <p class="text-slate-500 text-sm">Fully clippered cut. Highly practical, neat, and active-ready.</p>
+                    <p class="text-slate-500 text-sm">Short, masculine, and simple. Tidy appearance with very low maintenance.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="pricing" class="py-24 bg-slate-900 text-white px-6">
+    <section id="pricing" class="py-24 px-6 max-w-6xl mx-auto bg-white">
+        <div class="text-center mb-16">
+            <h3 class="text-4xl font-black uppercase italic mb-2 tracking-tighter border-b-4 border-amber-500 inline-block">Service Menu</h3>
+            <p class="text-slate-500 italic mt-4">Transparent pricing. No hidden fees.</p>
+        </div>
+        
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div class="bg-white p-8 rounded-3xl shadow-xl border-2 border-amber-100 card-hover relative overflow-hidden">
+                <div class="absolute top-0 right-0 bg-amber-500 text-white px-4 py-1 text-xs font-bold uppercase italic">Popular</div>
+                <i class="fas fa-chair text-4xl text-amber-600 mb-6"></i>
+                <h4 class="text-2xl font-black uppercase italic mb-2">Studio Session</h4>
+                <p class="text-slate-500 text-sm mb-6">Visit my private studio for a relaxed, fully-equipped grooming experience.</p>
+                <div class="text-3xl font-black text-slate-900 mb-6">RM 35.00 <span class="text-sm font-normal text-slate-400">/cut</span></div>
+                <ul class="text-sm space-y-3 mb-8">
+                    <li><i class="fas fa-check text-green-500 mr-2"></i> Any Style Choice</li>
+                    <li><i class="fas fa-check text-green-500 mr-2"></i> Hair Wash Included</li>
+                    <li><i class="fas fa-check text-green-500 mr-2"></i> Premium Styling</li>
+                </ul>
+                <button onclick="openWhatsApp()" class="w-full py-3 rounded-xl border-2 border-slate-900 font-bold hover:bg-slate-900 hover:text-white transition">Visit Studio</button>
+            </div>
+
+            <div class="bg-slate-900 p-8 rounded-3xl shadow-xl text-white card-hover">
+                <i class="fas fa-car-side text-4xl text-amber-500 mb-6"></i>
+                <h4 class="text-2xl font-black uppercase italic mb-2">House Call</h4>
+                <p class="text-slate-400 text-sm mb-6">I bring the barbershop to your doorstep. Perfect for busy schedules in Sepang.</p>
+                <div class="text-3xl font-black text-white mb-6">RM 55.00 <span class="text-sm font-normal text-slate-500">/visit</span></div>
+                <ul class="text-sm space-y-3 mb-8">
+                    <li><i class="fas fa-check text-amber-500 mr-2"></i> Transport Included (Sepang)</li>
+                    <li><i class="fas fa-check text-amber-500 mr-2"></i> Clean Setup/Cleanup</li>
+                    <li><i class="fas fa-check text-amber-500 mr-2"></i> Full Grooming Kit</li>
+                </ul>
+                <button onclick="openWhatsApp()" class="w-full py-3 rounded-xl bg-amber-600 text-white font-bold hover:bg-amber-500 transition border-none">Book Home Visit</button>
+            </div>
+
+            <div class="bg-white p-8 rounded-3xl shadow-xl border border-slate-100 card-hover">
+                <i class="fas fa-graduation-cap text-4xl text-slate-400 mb-6"></i>
+                <h4 class="text-2xl font-black uppercase italic mb-2">Student Cut</h4>
+                <p class="text-slate-500 text-sm mb-6">Special rate for students (Valid ID required). Available for Studio Sessions only.</p>
+                <div class="text-3xl font-black text-slate-900 mb-6">RM 25.00 <span class="text-sm font-normal text-slate-400">/cut</span></div>
+                <ul class="text-sm space-y-3 mb-8">
+                    <li><i class="fas fa-check text-green-500 mr-2"></i> Neat & Tidy Cuts</li>
+                    <li><i class="fas fa-check text-green-500 mr-2"></i> Styling Tips</li>
+                </ul>
+                <button onclick="openWhatsApp()" class="w-full py-3 rounded-xl border-2 border-slate-200 text-slate-400 font-bold hover:border-slate-900 hover:text-slate-900 transition">Book Student</button>
+            </div>
+        </div>
+    </section>
+
+    <section id="products" class="py-24 bg-slate-100 px-6 text-center">
         <div class="max-w-6xl mx-auto">
-            <h3 class="text-3xl font-bold text-center mb-12 italic tracking-widest uppercase">Pricing & Services</h3>
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <div class="bg-slate-800 p-8 rounded-3xl border border-slate-700 shadow-xl card-hover">
-                    <h4 class="text-xl font-bold mb-2 uppercase text-amber-500 italic">Studio Session</h4>
-                    <p class="text-slate-400 text-sm mb-6">Visit my private studio for a premium grooming experience.</p>
-                    <div class="text-3xl font-black mb-6 italic">RM 35.00</div>
-                    <button onclick="openWhatsApp()" class="w-full py-3 rounded-xl border border-white hover:bg-white hover:text-slate-900 transition font-bold">Visit Studio</button>
+            <div class="text-center mb-16">
+                <h3 class="text-4xl font-black uppercase italic mb-2 tracking-tighter">Premium Products</h3>
+                <p class="text-slate-500 italic">Maintain the look at home.</p>
+            </div>
+            <div class="grid md:grid-cols-2 lg:grid-cols-2 gap-8 max-w-4xl mx-auto">
+                <div class="bg-white rounded-2xl p-6 shadow-md text-center border border-slate-200 card-hover">
+                    <div class="h-48 bg-slate-50 rounded-xl mb-4 flex items-center justify-center">
+                        <i class="fas fa-jar-open text-6xl text-slate-200"></i>
+                    </div>
+                    <h5 class="font-bold text-lg uppercase italic">Elite Matte Clay</h5>
+                    <p class="text-slate-500 text-xs mb-4">Strong hold, natural finish. 100g.</p>
+                    <div class="text-amber-600 font-black mb-4 text-xl">RM 45.00</div>
+                    <button onclick="openWhatsApp()" class="text-xs font-bold uppercase tracking-widest text-slate-400 hover:text-amber-600">Enquire via WA</button>
                 </div>
-                <div class="bg-amber-600 p-8 rounded-3xl shadow-xl card-hover text-white">
-                    <h4 class="text-xl font-bold mb-2 uppercase italic">House Call</h4>
-                    <p class="text-amber-100 text-sm mb-6">I bring the shop to your home. Traveling within Sepang area.</p>
-                    <div class="text-3xl font-black mb-6 italic">RM 55.00</div>
-                    <button onclick="openWhatsApp()" class="w-full py-3 rounded-xl bg-slate-900 text-white hover:bg-white hover:text-slate-900 transition font-bold">Book Home Visit</button>
-                </div>
-                <div class="bg-slate-800 p-8 rounded-3xl border border-slate-700 shadow-xl card-hover">
-                    <h4 class="text-xl font-bold mb-2 uppercase text-slate-400 italic">Student Special</h4>
-                    <p class="text-slate-400 text-sm mb-6">Special rate for students (Valid ID required). Studio only.</p>
-                    <div class="text-3xl font-black mb-6 italic">RM 25.00</div>
-                    <button onclick="openWhatsApp()" class="w-full py-3 rounded-xl border border-slate-700 text-slate-500 transition font-bold">Student Slot</button>
+                <div class="bg-white rounded-2xl p-6 shadow-md text-center border border-slate-200 card-hover">
+                    <div class="h-48 bg-slate-50 rounded-xl mb-4 flex items-center justify-center">
+                        <i class="fas fa-oil-can text-6xl text-slate-200"></i>
+                    </div>
+                    <h5 class="font-bold text-lg uppercase italic">Organic Beard Oil</h5>
+                    <p class="text-slate-500 text-xs mb-4">Softens hair and skin. Sandalwood scent.</p>
+                    <div class="text-amber-600 font-black mb-4 text-xl">RM 38.00</div>
+                    <button onclick="openWhatsApp()" class="text-xs font-bold uppercase tracking-widest text-slate-400 hover:text-amber-600">Enquire via WA</button>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="products" class="py-24 bg-white px-6">
-        <div class="max-w-6xl mx-auto text-center">
-            <h3 class="text-4xl font-black uppercase italic mb-16 tracking-tighter">Premium Products</h3>
-            <div class="grid md:grid-cols-2 lg:grid-cols-2 gap-12 max-w-4xl mx-auto">
-                <div class="border-2 border-slate-100 p-8 rounded-3xl card-hover">
-                    <i class="fas fa-jar-open text-5xl text-slate-200 mb-6"></i>
-                    <h5 class="font-bold text-xl uppercase italic">Matte Pomade</h5>
-                    <p class="text-slate-500 mb-4">Strong hold with a natural finish. 100g.</p>
-                    <div class="text-2xl font-black text-amber-600">RM 45.00</div>
-                </div>
-                <div class="border-2 border-slate-100 p-8 rounded-3xl card-hover">
-                    <i class="fas fa-spray-can text-5xl text-slate-200 mb-6"></i>
-                    <h5 class="font-bold text-xl uppercase italic">Sea Salt Spray</h5>
-                    <p class="text-slate-500 mb-4">Adds volume and texture to your hair.</p>
-                    <div class="text-2xl font-black text-amber-600">RM 38.00</div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="contact" class="py-24 bg-slate-50 px-6">
-        <div class="max-w-2xl mx-auto bg-white p-10 rounded-3xl shadow-sm border border-slate-200">
-            <h3 class="text-3xl font-bold mb-6 text-center italic">Booking Inquiry</h3>
+    <section id="contact" class="py-24 bg-white px-6">
+        <div class="max-w-2xl mx-auto bg-slate-50 p-10 rounded-3xl shadow-sm border border-slate-200">
+            <h3 class="text-3xl font-bold mb-6 text-center italic">Ready for a new look?</h3>
             <form action="https://formspree.io/f/mjgewepy" method="POST" class="space-y-4">
-                <input type="text" name="name" placeholder="Full Name" required class="w-full p-4 rounded-xl border-none ring-1 ring-slate-200 focus:ring-2 focus:ring-amber-500 outline-none">
-                <input type="text" name="location" placeholder="Location (e.g., Cyberjaya, Sepang)" required class="w-full p-4 rounded-xl border-none ring-1 ring-slate-200 focus:ring-2 focus:ring-amber-500 outline-none">
-                <select name="service" class="w-full p-4 rounded-xl border-none ring-1 ring-slate-200 bg-white">
+                <input type="text" name="name" placeholder="Your Name" required class="w-full p-4 rounded-xl border-none ring-1 ring-slate-200 focus:ring-2 focus:ring-amber-500 transition">
+                <select name="service" class="w-full p-4 rounded-xl border-none ring-1 ring-slate-200 focus:ring-2 focus:ring-amber-500 transition bg-white">
                     <option>House Call (RM 55)</option>
                     <option>Studio Session (RM 35)</option>
-                    <option>Student Special (RM 25)</option>
+                    <option>Student Cut (RM 25)</option>
                 </select>
-                <textarea name="message" rows="4" placeholder="Mention your preferred date & style..." class="w-full p-4 rounded-xl border-none ring-1 ring-slate-200 focus:ring-2 focus:ring-amber-500 outline-none"></textarea>
-                <button type="submit" class="w-full bg-slate-900 text-white font-bold py-4 rounded-xl hover:bg-amber-600 transition shadow-lg">Send Email Inquiry</button>
+                <textarea name="message" rows="4" placeholder="Preferred Date & Time..." class="w-full p-4 rounded-xl border-none ring-1 ring-slate-200 focus:ring-2 focus:ring-amber-500 transition"></textarea>
+                <button type="submit" class="w-full bg-slate-900 text-white font-bold py-4 rounded-xl hover:bg-amber-600 transition shadow-lg uppercase tracking-widest">Send Booking Request</button>
             </form>
         </div>
     </section>
@@ -159,8 +174,8 @@
     <script>
         function openWhatsApp() {
             // Replace with your real Malaysia mobile number
-            const yourPhoneNumber = "60123456789"; 
-            const message = encodeURIComponent("Hi Elite Cuts! I'm interested in booking a session in Sepang. Please let me know your availability.");
+            const yourPhoneNumber = "601139806763"; 
+            const message = encodeURIComponent("Hi Elite Cuts! I'm interested in booking a session in Sepang/Selangor. Please let me know your availability.");
             window.open(`https://wa.me/${yourPhoneNumber}?text=${message}`, '_blank');
         }
     </script>
