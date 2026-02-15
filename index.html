@@ -3,442 +3,146 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Elite Cuts Sepang | Premium Barber Catalogue & Products</title>
+    <title>Elite Cuts Sepang | Premium Barber & Grooming</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Oswald:wght@300;400;600;700&display=swap" rel="stylesheet">
     <style>
         html { scroll-behavior: smooth; }
-        body { font-family: 'Oswald', sans-serif; }
-        .title-font { font-family: 'Bebas Neue', cursive; letter-spacing: 0.05em; }
-        .gold-gradient { background: linear-gradient(135deg, #d4af37 0%, #f9e29c 50%, #d4af37 100%); }
-        .gold-text { background: linear-gradient(135deg, #d4af37 0%, #f9e29c 50%, #d4af37 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+        .gold-gradient { background: linear-gradient(135deg, #d4af37 0%, #f9e29c 100%); }
         .dark-bg { background-color: #0f172a; }
-        .card-hover { transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1); }
-        .card-hover:hover { transform: translateY(-12px) scale(1.02); box-shadow: 0 25px 50px -12px rgba(212, 175, 55, 0.25); }
-        .price-tag { background: linear-gradient(135deg, #d4af37 0%, #b8941f 100%); }
-        
-        /* Image placeholders with gradients */
-        .img-undercut { background: linear-gradient(135deg, #1e293b 0%, #334155 100%); }
-        .img-fade { background: linear-gradient(135deg, #334155 0%, #475569 100%); }
-        .img-crew { background: linear-gradient(135deg, #475569 0%, #64748b 100%); }
-        .img-french { background: linear-gradient(135deg, #64748b 0%, #475569 100%); }
-        .img-buzz { background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%); }
-        
-        .service-icon {
-            width: 100%;
-            height: 100%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 6rem;
-            color: rgba(212, 175, 55, 0.2);
-        }
-        
-        .product-image {
-            background: linear-gradient(135deg, #1e293b 0%, #334155 100%);
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .product-image::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.1), transparent);
-            transition: 0.5s;
-        }
-        
-        .product-image:hover::before {
-            left: 100%;
-        }
-        
-        .animate-fade-in {
-            animation: fadeIn 0.8s ease-out forwards;
-            opacity: 0;
-        }
-        
-        @keyframes fadeIn {
-            to { opacity: 1; }
-        }
-        
-        .stagger-1 { animation-delay: 0.1s; }
-        .stagger-2 { animation-delay: 0.2s; }
-        .stagger-3 { animation-delay: 0.3s; }
-        .stagger-4 { animation-delay: 0.4s; }
-        .stagger-5 { animation-delay: 0.5s; }
-        
-        .nav-shadow { box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06); }
-        
-        .gold-shine {
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .gold-shine::after {
-            content: '';
-            position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            background: linear-gradient(45deg, transparent, rgba(255,255,255,0.3), transparent);
-            transform: rotate(45deg);
-            animation: shine 3s infinite;
-        }
-        
-        @keyframes shine {
-            0% { transform: translateX(-100%) translateY(-100%) rotate(45deg); }
-            100% { transform: translateX(100%) translateY(100%) rotate(45deg); }
-        }
+        .card-hover:hover { transform: translateY(-10px); transition: 0.4s ease; }
     </style>
 </head>
-<body class="bg-slate-50 text-slate-900">
+<body class="bg-slate-50 font-sans text-slate-900">
 
-    <nav class="fixed w-full z-50 bg-white/95 backdrop-blur-md border-b border-slate-200 nav-shadow">
-        <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+    <nav class="fixed w-full z-50 bg-white/90 backdrop-blur-md border-b border-slate-200">
+        <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
             <h1 class="text-2xl font-black tracking-tighter uppercase italic">Elite<span class="text-amber-600">Cuts</span></h1>
-            <div class="space-x-8 hidden md:flex items-center font-semibold text-xs uppercase tracking-widest">
-                <a href="#catalogue" class="hover:text-amber-600 transition">Services</a>
-                <a href="#products" class="hover:text-amber-600 transition">Products</a>
-                <a href="#reviews" class="hover:text-amber-600 transition">Reviews</a>
-                <a href="#contact" class="hover:text-amber-600 transition">Contact</a>
-                <button onclick="openWhatsApp()" class="bg-slate-900 text-white px-6 py-3 rounded-lg hover:bg-amber-600 transition shadow-lg gold-shine">Book Now</button>
-            </div>
-            <button class="md:hidden text-2xl" onclick="toggleMobileMenu()">
-                <i class="fas fa-bars"></i>
-            </button>
-        </div>
-        <div id="mobileMenu" class="hidden md:hidden bg-white border-t border-slate-200">
-            <div class="px-6 py-4 space-y-3 text-center">
-                <a href="#catalogue" class="block hover:text-amber-600 transition font-semibold">Services</a>
-                <a href="#products" class="block hover:text-amber-600 transition font-semibold">Products</a>
-                <a href="#reviews" class="block hover:text-amber-600 transition font-semibold">Reviews</a>
-                <a href="#contact" class="block hover:text-amber-600 transition font-semibold">Contact</a>
-                <button onclick="openWhatsApp()" class="w-full bg-slate-900 text-white px-6 py-3 rounded-lg hover:bg-amber-600 transition">Book Now</button>
+            <div class="space-x-6 hidden md:flex items-center font-bold text-xs uppercase tracking-widest">
+                <a href="#catalogue" class="hover:text-amber-600">Services</a>
+                <a href="#products" class="hover:text-amber-600">Products</a>
+                <a href="#contact" class="hover:text-amber-600">Book</a>
+                <button onclick="openWhatsApp()" class="bg-slate-900 text-white px-5 py-2 rounded-lg hover:bg-amber-600 transition shadow-md">Book Now</button>
             </div>
         </div>
     </nav>
 
-    <header class="pt-48 pb-28 px-6 dark-bg text-white text-center relative overflow-hidden">
-        <div class="absolute inset-0 opacity-10">
-            <div class="absolute top-20 left-10 w-72 h-72 bg-amber-600 rounded-full blur-3xl"></div>
-            <div class="absolute bottom-20 right-10 w-96 h-96 bg-amber-500 rounded-full blur-3xl"></div>
-        </div>
-        <div class="max-w-5xl mx-auto relative z-10">
-            <h2 class="text-6xl md:text-8xl title-font mb-6 leading-tight animate-fade-in">MASTERING THE <br><span class="gold-text">MODERN LOOK.</span></h2>
-            <p class="text-slate-300 text-lg md:text-xl mb-12 font-light animate-fade-in stagger-1">Professional Barber Services in Sepang & Selangor. <br>Premium Grooming at your location or my studio.</p>
-            <button onclick="openWhatsApp()" class="bg-amber-600 text-white px-12 py-5 rounded-full font-bold text-lg hover:scale-105 transition shadow-2xl animate-fade-in stagger-2 gold-shine">Check Availability</button>
+    <header class="pt-40 pb-20 px-6 dark-bg text-white text-center">
+        <div class="max-w-4xl mx-auto">
+            <h2 class="text-5xl md:text-7xl font-extrabold mb-6 leading-tight uppercase tracking-tighter">Mastering The <br><span class="text-transparent bg-clip-text gold-gradient">Modern Look.</span></h2>
+            <p class="text-slate-400 text-lg mb-4 italic text-balance">Premium Grooming in Sepang & Selangor.</p>
+            <div class="flex flex-wrap justify-center gap-4 mb-10">
+                <span class="bg-slate-800 px-4 py-2 rounded-full text-xs font-bold uppercase tracking-widest border border-slate-700"><i class="fas fa-home mr-2 text-amber-500"></i> House Calls</span>
+                <span class="bg-slate-800 px-4 py-2 rounded-full text-xs font-bold uppercase tracking-widest border border-slate-700"><i class="fas fa-cut mr-2 text-amber-500"></i> Studio Sessions</span>
+            </div>
+            <button onclick="openWhatsApp()" class="bg-amber-600 text-white px-10 py-4 rounded-full font-bold text-lg hover:scale-105 transition shadow-2xl uppercase tracking-widest">Secure Your Slot</button>
         </div>
     </header>
 
-    <section id="catalogue" class="py-28 px-6 max-w-7xl mx-auto">
-        <div class="text-center mb-20">
-            <h3 class="text-5xl title-font mb-3 tracking-wider">THE CATALOGUE</h3>
-            <p class="text-slate-500 text-lg font-light">Select your signature style.</p>
+    <section id="catalogue" class="py-24 px-6 max-w-6xl mx-auto">
+        <div class="text-center mb-16">
+            <h3 class="text-4xl font-black uppercase italic mb-2 tracking-tighter border-b-4 border-amber-500 inline-block">Service Menu</h3>
+            <p class="text-slate-500 italic mt-4">Transparent pricing. No hidden fees.</p>
         </div>
         
-        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-10">
-            <div class="bg-white rounded-3xl overflow-hidden shadow-xl card-hover border border-slate-100">
-                <div class="relative h-72 overflow-hidden">
-                    <img src="https://images.unsplash.com/photo-1593702295094-242a99c14ad8?auto=format&fit=crop&w=600&q=80" alt="Undercut" class="w-full h-full object-cover">
-                    <div class="absolute top-4 right-4 price-tag text-white px-4 py-2 rounded-full text-sm font-bold">
-                        RM 35+
-                    </div>
-                </div>
-                <div class="p-8">
-                    <h4 class="font-bold text-2xl mb-3 text-amber-600 title-font">1. UNDERCUT</h4>
-                    <p class="text-slate-600 leading-relaxed">Sides and back are cut thin with a longer top. Offers a modern and neat style, suitable for various face shapes.</p>
-                </div>
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div class="bg-white p-8 rounded-3xl shadow-xl border-2 border-amber-100 card-hover relative overflow-hidden">
+                <div class="absolute top-0 right-0 bg-amber-500 text-white px-4 py-1 text-xs font-bold uppercase italic">Popular</div>
+                <i class="fas fa-chair text-4xl text-amber-600 mb-6"></i>
+                <h4 class="text-2xl font-black uppercase italic mb-2">Studio Session</h4>
+                <p class="text-slate-500 text-sm mb-6">Visit my private studio for a relaxed, fully-equipped grooming experience.</p>
+                <div class="text-3xl font-black text-slate-900 mb-6">RM 35.00 <span class="text-sm font-normal text-slate-400">/cut</span></div>
+                <ul class="text-sm space-y-3 mb-8">
+                    <li><i class="fas fa-check text-green-500 mr-2"></i> Any Style Choice</li>
+                    <li><i class="fas fa-check text-green-500 mr-2"></i> Hair Wash Included</li>
+                    <li><i class="fas fa-check text-green-500 mr-2"></i> Premium Styling</li>
+                </ul>
+                <button onclick="openWhatsApp()" class="w-full py-3 rounded-xl border-2 border-slate-900 font-bold hover:bg-slate-900 hover:text-white transition">Visit Studio</button>
             </div>
 
-            <div class="bg-white rounded-3xl overflow-hidden shadow-xl card-hover border border-slate-100">
-                <div class="relative h-72 overflow-hidden">
-                    <img src="https://images.unsplash.com/photo-1621605815841-aa897af68832?auto=format&fit=crop&w=600&q=80" alt="Fade Cut" class="w-full h-full object-cover">
-                    <div class="absolute top-4 right-4 price-tag text-white px-4 py-2 rounded-full text-sm font-bold">
-                        RM 40+
-                    </div>
-                </div>
-                <div class="p-8">
-                    <h4 class="font-bold text-2xl mb-3 text-amber-600 title-font">2. FADE CUT</h4>
-                    <p class="text-slate-600 leading-relaxed">Layered cut that tapers down to the skin (Low/Mid/High). A clean and professional look, popular for daily and corporate styles.</p>
-                </div>
+            <div class="bg-slate-900 p-8 rounded-3xl shadow-xl text-white card-hover">
+                <i class="fas fa-car-side text-4xl text-amber-500 mb-6"></i>
+                <h4 class="text-2xl font-black uppercase italic mb-2">House Call</h4>
+                <p class="text-slate-400 text-sm mb-6">I bring the barbershop to your doorstep. Perfect for busy schedules in Sepang.</p>
+                <div class="text-3xl font-black text-white mb-6">RM 55.00 <span class="text-sm font-normal text-slate-500">/visit</span></div>
+                <ul class="text-sm space-y-3 mb-8">
+                    <li><i class="fas fa-check text-amber-500 mr-2"></i> Transport Included (Sepang)</li>
+                    <li><i class="fas fa-check text-amber-500 mr-2"></i> Clean Setup/Cleanup</li>
+                    <li><i class="fas fa-check text-amber-500 mr-2"></i> Full Grooming Kit</li>
+                </ul>
+                <button onclick="openWhatsApp()" class="w-full py-3 rounded-xl bg-amber-600 text-white font-bold hover:bg-amber-500 transition border-none">Book Home Visit</button>
             </div>
 
-            <div class="bg-white rounded-3xl overflow-hidden shadow-xl card-hover border border-slate-100">
-                <div class="relative h-72 overflow-hidden">
-                    <img src="https://images.unsplash.com/photo-1605497788044-5a32c7078486?auto=format&fit=crop&w=600&q=80" alt="Crew Cut" class="w-full h-full object-cover">
-                    <div class="absolute top-4 right-4 price-tag text-white px-4 py-2 rounded-full text-sm font-bold">
-                        RM 30+
-                    </div>
-                </div>
-                <div class="p-8">
-                    <h4 class="font-bold text-2xl mb-3 text-amber-600 title-font">3. CREW CUT</h4>
-                    <p class="text-slate-600 leading-relaxed">Short and simple cut. Easy to maintain while providing a masculine and tidy appearance.</p>
-                </div>
-            </div>
-
-            <div class="bg-white rounded-3xl overflow-hidden shadow-xl card-hover border border-slate-100">
-                <div class="relative h-72 overflow-hidden">
-                    <img src="https://images.unsplash.com/photo-1503951914875-452162b0f3f1?auto=format&fit=crop&w=600&q=80" alt="French Crop" class="w-full h-full object-cover">
-                    <div class="absolute top-4 right-4 price-tag text-white px-4 py-2 rounded-full text-sm font-bold">
-                        RM 38+
-                    </div>
-                </div>
-                <div class="p-8">
-                    <h4 class="font-bold text-2xl mb-3 text-amber-600 title-font">4. FRENCH CROP</h4>
-                    <p class="text-slate-600 leading-relaxed">Short top with fringe brushed forward. A modern style perfect for a trendy and minimal appearance.</p>
-                </div>
-            </div>
-
-            <div class="bg-white rounded-3xl overflow-hidden shadow-xl card-hover border border-slate-100">
-                <div class="relative h-72 overflow-hidden">
-                    <img src="https://images.unsplash.com/photo-1599351431247-f10b21817021?auto=format&fit=crop&w=600&q=80" alt="Buzz Cut" class="w-full h-full object-cover">
-                    <div class="absolute top-4 right-4 price-tag text-white px-4 py-2 rounded-full text-sm font-bold">
-                        RM 25+
-                    </div>
-                </div>
-                <div class="p-8">
-                    <h4 class="font-bold text-2xl mb-3 text-amber-600 title-font">5. BUZZ CUT</h4>
-                    <p class="text-slate-600 leading-relaxed">Fully clippered cut. Highly practical, neat, and suitable for an active lifestyle.</p>
-                </div>
-            </div>
-
-            <div class="bg-white rounded-3xl overflow-hidden shadow-xl card-hover border border-slate-100">
-                <div class="relative h-72 overflow-hidden">
-                    <img src="https://images.unsplash.com/photo-1622296089863-eb7fc530daa8?auto=format&fit=crop&w=600&q=80" alt="Custom Style" class="w-full h-full object-cover">
-                    <div class="absolute top-4 right-4 price-tag text-white px-4 py-2 rounded-full text-sm font-bold">
-                        RM 50+
-                    </div>
-                </div>
-                <div class="p-8">
-                    <h4 class="font-bold text-2xl mb-3 text-amber-600 title-font">6. CUSTOM STYLE</h4>
-                    <p class="text-slate-600 leading-relaxed">Bring your reference or discuss your vision. I'll create a personalized cut tailored to your preferences.</p>
-                </div>
+            <div class="bg-white p-8 rounded-3xl shadow-xl border border-slate-100 card-hover">
+                <i class="fas fa-graduation-cap text-4xl text-slate-400 mb-6"></i>
+                <h4 class="text-2xl font-black uppercase italic mb-2">Student Cut</h4>
+                <p class="text-slate-500 text-sm mb-6">Special rate for students (Valid ID required). Available for Studio Sessions only.</p>
+                <div class="text-3xl font-black text-slate-900 mb-6">RM 25.00 <span class="text-sm font-normal text-slate-400">/cut</span></div>
+                <ul class="text-sm space-y-3 mb-8">
+                    <li><i class="fas fa-check text-green-500 mr-2"></i> Neat & Tidy Cuts</li>
+                    <li><i class="fas fa-check text-green-500 mr-2"></i> Styling Tips</li>
+                </ul>
+                <button onclick="openWhatsApp()" class="w-full py-3 rounded-xl border-2 border-slate-200 text-slate-400 font-bold hover:border-slate-900 hover:text-slate-900 transition">Book Student</button>
             </div>
         </div>
     </section>
 
-    <section id="products" class="py-28 px-6 bg-slate-900 text-white">
-        <div class="max-w-7xl mx-auto">
-            <div class="text-center mb-20">
-                <h3 class="text-5xl title-font mb-3 tracking-wider">PREMIUM PRODUCTS</h3>
-                <p class="text-slate-400 text-lg font-light">Professional-grade grooming essentials.</p>
+    <section id="products" class="py-24 bg-slate-100 px-6">
+        <div class="max-w-6xl mx-auto">
+            <div class="text-center mb-16">
+                <h3 class="text-4xl font-black uppercase italic mb-2 tracking-tighter">Premium Products</h3>
+                <p class="text-slate-500 italic">Maintain the look at home.</p>
             </div>
-            
-            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-                <!-- Product 1 -->
-                <div class="bg-slate-800 rounded-3xl overflow-hidden border border-slate-700 card-hover">
-                    <div class="h-64 relative overflow-hidden">
-                        <img src="https://images.unsplash.com/photo-1616394584738-fc6e612e71b9?auto=format&fit=crop&w=400&q=80" alt="Matte Pomade" class="w-full h-full object-cover">
-                    </div>
-                    <div class="p-6">
-                        <h4 class="font-bold text-xl mb-2 gold-text title-font">MATTE POMADE</h4>
-                        <p class="text-slate-400 text-sm mb-4">Medium hold, natural finish. Perfect for textured, messy styles.</p>
-                        <div class="flex justify-between items-center">
-                            <span class="text-2xl font-bold text-amber-500">RM 45</span>
-                            <button onclick="orderProduct('Matte Pomade')" class="bg-amber-600 hover:bg-amber-700 text-white px-4 py-2 rounded-lg text-sm font-semibold transition">Order</button>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Product 2 -->
-                <div class="bg-slate-800 rounded-3xl overflow-hidden border border-slate-700 card-hover">
-                    <div class="h-64 relative overflow-hidden">
-                        <img src="https://images.unsplash.com/photo-1621607512214-68297480165e?auto=format&fit=crop&w=400&q=80" alt="Beard Oil" class="w-full h-full object-cover">
-                    </div>
-                    <div class="p-6">
-                        <h4 class="font-bold text-xl mb-2 gold-text title-font">BEARD OIL</h4>
-                        <p class="text-slate-400 text-sm mb-4">Nourishing blend for soft, manageable facial hair. Sandalwood scent.</p>
-                        <div class="flex justify-between items-center">
-                            <span class="text-2xl font-bold text-amber-500">RM 35</span>
-                            <button onclick="orderProduct('Beard Oil')" class="bg-amber-600 hover:bg-amber-700 text-white px-4 py-2 rounded-lg text-sm font-semibold transition">Order</button>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Product 3 -->
-                <div class="bg-slate-800 rounded-3xl overflow-hidden border border-slate-700 card-hover">
-                    <div class="h-64 relative overflow-hidden">
-                        <img src="https://images.unsplash.com/photo-1608248597279-f99d160bfcbc?auto=format&fit=crop&w=400&q=80" alt="Styling Clay" class="w-full h-full object-cover">
-                    </div>
-                    <div class="p-6">
-                        <h4 class="font-bold text-xl mb-2 gold-text title-font">STYLING CLAY</h4>
-                        <p class="text-slate-400 text-sm mb-4">Strong hold, workable texture. Ideal for sculpted, defined looks.</p>
-                        <div class="flex justify-between items-center">
-                            <span class="text-2xl font-bold text-amber-500">RM 50</span>
-                            <button onclick="orderProduct('Styling Clay')" class="bg-amber-600 hover:bg-amber-700 text-white px-4 py-2 rounded-lg text-sm font-semibold transition">Order</button>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Product 4 -->
-                <div class="bg-slate-800 rounded-3xl overflow-hidden border border-slate-700 card-hover">
-                    <div class="h-64 relative overflow-hidden">
-                        <img src="https://images.unsplash.com/photo-1631214500869-02e41b9243b8?auto=format&fit=crop&w=400&q=80" alt="Grooming Kit" class="w-full h-full object-cover">
-                    </div>
-                    <div class="p-6">
-                        <h4 class="font-bold text-xl mb-2 gold-text title-font">GROOMING KIT</h4>
-                        <p class="text-slate-400 text-sm mb-4">Complete set: comb, scissors, beard brush. Professional quality.</p>
-                        <div class="flex justify-between items-center">
-                            <span class="text-2xl font-bold text-amber-500">RM 75</span>
-                            <button onclick="orderProduct('Grooming Kit')" class="bg-amber-600 hover:bg-amber-700 text-white px-4 py-2 rounded-lg text-sm font-semibold transition">Order</button>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Product 5 -->
-                <div class="bg-slate-800 rounded-3xl overflow-hidden border border-slate-700 card-hover">
-                    <div class="h-64 relative overflow-hidden">
-                        <img src="https://images.unsplash.com/photo-1556228852-80a7b494e1f3?auto=format&fit=crop&w=400&q=80" alt="Shampoo Bar" class="w-full h-full object-cover">
-                    </div>
-                    <div class="p-6">
-                        <h4 class="font-bold text-xl mb-2 gold-text title-font">SHAMPOO BAR</h4>
-                        <p class="text-slate-400 text-sm mb-4">Natural, sulfate-free. Strengthens and cleanses without stripping oils.</p>
-                        <div class="flex justify-between items-center">
-                            <span class="text-2xl font-bold text-amber-500">RM 28</span>
-                            <button onclick="orderProduct('Shampoo Bar')" class="bg-amber-600 hover:bg-amber-700 text-white px-4 py-2 rounded-lg text-sm font-semibold transition">Order</button>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Product 6 -->
-                <div class="bg-slate-800 rounded-3xl overflow-hidden border border-slate-700 card-hover">
-                    <div class="h-64 relative overflow-hidden">
-                        <img src="https://images.unsplash.com/photo-1535585209827-a15fcdbc4c2d?auto=format&fit=crop&w=400&q=80" alt="Hair Wax" class="w-full h-full object-cover">
-                    </div>
-                    <div class="p-6">
-                        <h4 class="font-bold text-xl mb-2 gold-text title-font">HAIR WAX</h4>
-                        <p class="text-slate-400 text-sm mb-4">High shine, flexible hold. Classic look with easy restyling.</p>
-                        <div class="flex justify-between items-center">
-                            <span class="text-2xl font-bold text-amber-500">RM 42</span>
-                            <button onclick="orderProduct('Hair Wax')" class="bg-amber-600 hover:bg-amber-700 text-white px-4 py-2 rounded-lg text-sm font-semibold transition">Order</button>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Product 7 -->
-                <div class="bg-slate-800 rounded-3xl overflow-hidden border border-slate-700 card-hover">
-                    <div class="h-64 relative overflow-hidden">
-                        <img src="https://images.unsplash.com/photo-1571875257727-256c39da42af?auto=format&fit=crop&w=400&q=80" alt="Aftershave" class="w-full h-full object-cover">
-                    </div>
-                    <div class="p-6">
-                        <h4 class="font-bold text-xl mb-2 gold-text title-font">AFTERSHAVE</h4>
-                        <p class="text-slate-400 text-sm mb-4">Cooling formula. Soothes skin, prevents irritation and razor burn.</p>
-                        <div class="flex justify-between items-center">
-                            <span class="text-2xl font-bold text-amber-500">RM 38</span>
-                            <button onclick="orderProduct('Aftershave')" class="bg-amber-600 hover:bg-amber-700 text-white px-4 py-2 rounded-lg text-sm font-semibold transition">Order</button>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Product 8 -->
-                <div class="bg-slate-800 rounded-3xl overflow-hidden border border-slate-700 card-hover">
-                    <div class="h-64 relative overflow-hidden">
-                        <img src="https://images.unsplash.com/photo-1622287162716-277ae18e9ce9?auto=format&fit=crop&w=400&q=80" alt="Pro Clippers" class="w-full h-full object-cover">
-                    </div>
-                    <div class="p-6">
-                        <h4 class="font-bold text-xl mb-2 gold-text title-font">PRO CLIPPERS</h4>
-                        <p class="text-slate-400 text-sm mb-4">Premium cordless clippers. Professional grade for home maintenance.</p>
-                        <div class="flex justify-between items-center">
-                            <span class="text-2xl font-bold text-amber-500">RM 180</span>
-                            <button onclick="orderProduct('Pro Clippers')" class="bg-amber-600 hover:bg-amber-700 text-white px-4 py-2 rounded-lg text-sm font-semibold transition">Order</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="mt-16 text-center">
-                <p class="text-slate-400 text-lg mb-6">All products available for pickup or delivery in Sepang/Selangor area</p>
-                <button onclick="openWhatsApp()" class="bg-amber-600 hover:bg-amber-700 text-white px-10 py-4 rounded-full font-bold text-lg transition shadow-xl gold-shine">
-                    <i class="fab fa-whatsapp mr-2"></i>Shop via WhatsApp
-                </button>
-            </div>
-        </div>
-    </section>
-
-    <section id="reviews" class="py-28 bg-white px-6">
-        <div class="max-w-7xl mx-auto">
-            <h3 class="text-4xl title-font text-center mb-16 tracking-wider">CLIENT REVIEWS</h3>
             <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <div class="bg-slate-50 p-8 rounded-3xl border-2 border-slate-200 shadow-lg card-hover">
-                    <div class="flex text-amber-500 mb-4 text-xl">
-                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                <div class="bg-white rounded-2xl p-6 shadow-md text-center border border-slate-200">
+                    <div class="h-48 bg-slate-50 rounded-xl mb-4 flex items-center justify-center">
+                        <i class="fas fa-jar-open text-6xl text-slate-200"></i>
                     </div>
-                    <p class="text-slate-700 mb-6 leading-relaxed">"Best fade in Sepang. Very meticulous with the detail and clean setup. Always consistent quality."</p>
-                    <p class="font-bold text-amber-600 title-font">- AHMAD Z.</p>
+                    <h5 class="font-bold text-lg uppercase italic">Elite Matte Clay</h5>
+                    <p class="text-slate-500 text-xs mb-4">Strong hold, natural finish. 100g.</p>
+                    <div class="text-amber-600 font-black mb-4">RM 45.00</div>
+                    <button onclick="openWhatsApp()" class="text-xs font-bold uppercase tracking-widest text-slate-400 hover:text-amber-600">Enquire via WA</button>
                 </div>
-                <div class="bg-slate-50 p-8 rounded-3xl border-2 border-slate-200 shadow-lg card-hover">
-                    <div class="flex text-amber-500 mb-4 text-xl">
-                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                <div class="bg-white rounded-2xl p-6 shadow-md text-center border border-slate-200">
+                    <div class="h-48 bg-slate-50 rounded-xl mb-4 flex items-center justify-center">
+                        <i class="fas fa-oil-can text-6xl text-slate-200"></i>
                     </div>
-                    <p class="text-slate-700 mb-6 leading-relaxed">"Great house call service. Saved me a trip to the mall. Professional and on time every session."</p>
-                    <p class="font-bold text-amber-600 title-font">- RIZAL M.</p>
-                </div>
-                <div class="bg-slate-50 p-8 rounded-3xl border-2 border-slate-200 shadow-lg card-hover">
-                    <div class="flex text-amber-500 mb-4 text-xl">
-                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
-                    </div>
-                    <p class="text-slate-700 mb-6 leading-relaxed">"Studio session was relaxing and top quality. The French Crop looks exactly as requested. Highly recommend!"</p>
-                    <p class="font-bold text-amber-600 title-font">- JASON T.</p>
+                    <h5 class="font-bold text-lg uppercase italic">Organic Beard Oil</h5>
+                    <p class="text-slate-500 text-xs mb-4">Softens hair and skin. Sandalwood scent.</p>
+                    <div class="text-amber-600 font-black mb-4">RM 38.00</div>
+                    <button onclick="openWhatsApp()" class="text-xs font-bold uppercase tracking-widest text-slate-400 hover:text-amber-600">Enquire via WA</button>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="contact" class="py-28 bg-slate-900 px-6">
-        <div class="max-w-2xl mx-auto bg-slate-800 p-12 rounded-3xl shadow-2xl border border-slate-700">
-            <h3 class="text-4xl title-font mb-8 text-center text-white tracking-wider">GET IN TOUCH</h3>
-            <form action="https://formspree.io/f/mjgewepy" method="POST" class="space-y-5">
-                <input type="text" name="name" placeholder="Full Name" required class="w-full p-5 rounded-xl bg-slate-700 border-none text-white placeholder-slate-400 outline-none focus:ring-2 focus:ring-amber-500 transition">
-                <input type="text" name="area" placeholder="Location (e.g., Cyberjaya, Sepang)" required class="w-full p-5 rounded-xl bg-slate-700 border-none text-white placeholder-slate-400 outline-none focus:ring-2 focus:ring-amber-500 transition">
-                <textarea name="message" rows="4" placeholder="Service or product inquiry..." class="w-full p-5 rounded-xl bg-slate-700 border-none text-white placeholder-slate-400 outline-none focus:ring-2 focus:ring-amber-500 transition"></textarea>
-                <button type="submit" class="w-full bg-amber-600 text-white font-bold py-5 rounded-xl hover:bg-amber-700 transition shadow-xl text-lg">
-                    <i class="fas fa-paper-plane mr-2"></i>Send Inquiry
-                </button>
+    <section id="contact" class="py-24 bg-white px-6">
+        <div class="max-w-2xl mx-auto bg-slate-50 p-10 rounded-3xl shadow-sm border border-slate-200">
+            <h3 class="text-3xl font-bold mb-6 text-center italic">Ready for a new look?</h3>
+            <form action="https://formspree.io/f/mjgewepy" method="POST" class="space-y-4">
+                <input type="text" name="name" placeholder="Your Name" required class="w-full p-4 rounded-xl border-none ring-1 ring-slate-200 focus:ring-2 focus:ring-amber-500 transition">
+                <select name="service" class="w-full p-4 rounded-xl border-none ring-1 ring-slate-200 focus:ring-2 focus:ring-amber-500 transition bg-white">
+                    <option>House Call (RM 55)</option>
+                    <option>Studio Session (RM 35)</option>
+                    <option>Student Cut (RM 25)</option>
+                </select>
+                <textarea name="message" rows="4" placeholder="Preferred Date & Time..." class="w-full p-4 rounded-xl border-none ring-1 ring-slate-200 focus:ring-2 focus:ring-amber-500 transition"></textarea>
+                <button type="submit" class="w-full bg-slate-900 text-white font-bold py-4 rounded-xl hover:bg-amber-600 transition shadow-lg uppercase tracking-widest">Send Booking Request</button>
             </form>
-            <div class="mt-8 text-center">
-                <p class="text-slate-400 mb-4">Or reach out directly:</p>
-                <button onclick="openWhatsApp()" class="inline-flex items-center text-amber-500 hover:text-amber-400 transition font-semibold">
-                    <i class="fab fa-whatsapp text-2xl mr-3"></i>
-                    <span>WhatsApp: +60 12-345-6789</span>
-                </button>
-            </div>
         </div>
     </section>
 
-    <footer class="py-12 bg-black text-slate-500 text-center border-t border-slate-800">
-        <p class="title-font tracking-widest text-slate-400 mb-2 text-xl">ELITECUTS SEPANG</p>
-        <p class="text-sm">&copy; 2026. Premium Barbering Selangor.</p>
-        <div class="mt-6 flex justify-center space-x-6 text-2xl">
-            <a href="#" class="hover:text-amber-500 transition"><i class="fab fa-instagram"></i></a>
-            <a href="#" class="hover:text-amber-500 transition"><i class="fab fa-facebook"></i></a>
-            <a href="#" class="hover:text-amber-500 transition"><i class="fab fa-tiktok"></i></a>
-        </div>
+    <footer class="py-12 bg-slate-900 text-slate-500 text-center text-sm">
+        <p class="uppercase tracking-widest font-bold text-slate-400 mb-2 italic">EliteCuts Sepang</p>
+        <p>&copy; 2026. Premium Grooming Services for Selangor.</p>
     </footer>
 
     <script>
         function openWhatsApp() {
-            // Replace with your actual phone number (format: country code + number, no + or spaces)
+            // Updated placeholder for your real number
             const yourPhoneNumber = "60123456789"; 
-            const message = encodeURIComponent("Hi Elite Cuts! I'm interested in booking a session or purchasing products in Sepang/Selangor.");
+            const message = encodeURIComponent("Hi Elite Cuts! I'm interested in booking a session in Sepang/Selangor. Please let me know your availability.");
             window.open(`https://wa.me/${yourPhoneNumber}?text=${message}`, '_blank');
-        }
-
-        function orderProduct(productName) {
-            const yourPhoneNumber = "60123456789";
-            const message = encodeURIComponent(`Hi! I'd like to order: ${productName}`);
-            window.open(`https://wa.me/${yourPhoneNumber}?text=${message}`, '_blank');
-        }
-
-        function toggleMobileMenu() {
-            const menu = document.getElementById('mobileMenu');
-            menu.classList.toggle('hidden');
         }
     </script>
 
