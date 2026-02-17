@@ -17,6 +17,10 @@
             letter-spacing: 0.01em; 
         }
         .logo-text { font-size: 1rem !important; }
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+        .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+        .scroll-snap-x { scroll-snap-type: x mandatory; }
+        .scroll-item { scroll-snap-align: start; }
     }
     </style>
 </head>
@@ -52,35 +56,49 @@
     </header>
 
     <section id="catalogue" class="py-24 px-6 max-w-6xl mx-auto">
-        <div class="text-center mb-16">
-            <h3 class="text-4xl font-black uppercase italic mb-2 tracking-tighter border-b-4 border-amber-500 inline-block">Service Catalogue</h3>
-            <p class="text-slate-500 italic mt-4">Precision cuts designed for your unique style.</p>
+        <div class="text-center mb-12">
+            <h3 class="text-4xl font-black uppercase italic mb-2 tracking-tighter border-b-4 border-amber-500 inline-block">Style Catalogue</h3>
+            <p class="text-slate-500 italic mt-4">Swipe to explore our signature cuts.</p>
         </div>
         
-        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <div class="bg-white rounded-2xl overflow-hidden shadow-lg card-hover border border-slate-100">
-                <img src="images/undercut.jpg" alt="Undercut" class="w-full h-64 object-cover bg-slate-200">
+        <div class="flex overflow-x-auto gap-6 pb-8 no-scrollbar scroll-snap-x snap-mandatory">
+            <div class="min-w-[85%] md:min-w-[30%] bg-white rounded-2xl overflow-hidden shadow-lg border border-slate-100 scroll-item">
+                <img src="images/undercut.jpg" alt="Undercut" class="w-full h-64 object-cover">
                 <div class="p-6">
                     <h4 class="font-bold text-xl mb-2 text-amber-600 uppercase italic">1. Undercut</h4>
                     <p class="text-slate-500 text-sm">Sides and back are cut thin with a longer top. Offers a modern and neat style.</p>
                 </div>
             </div>
 
-            <div class="bg-white rounded-2xl overflow-hidden shadow-lg card-hover border border-slate-100">
-                <img src="images/fade.jpg" alt="Fade Cut" class="w-full h-64 object-cover bg-slate-200">
+            <div class="min-w-[85%] md:min-w-[30%] bg-white rounded-2xl overflow-hidden shadow-lg border border-slate-100 scroll-item">
+                <img src="images/fade.jpg" alt="Fade Cut" class="w-full h-64 object-cover">
                 <div class="p-6">
                     <h4 class="font-bold text-xl mb-2 text-amber-600 uppercase italic">2. Skin Fade</h4>
-                    <p class="text-slate-500 text-sm">Precision layering from skin to top. A clean and professional choice for corporate or daily styles.</p>
+                    <p class="text-slate-500 text-sm">Precision layering from skin to top. A clean and professional choice.</p>
                 </div>
             </div>
 
-            <div class="bg-white rounded-2xl overflow-hidden shadow-lg card-hover border border-slate-100">
-                <img src="images/crewcut.jpg" alt="Crew Cut" class="w-full h-64 object-cover bg-slate-200">
+            <div class="min-w-[85%] md:min-w-[30%] bg-white rounded-2xl overflow-hidden shadow-lg border border-slate-100 scroll-item">
+                <img src="images/crewcut.jpg" alt="Crew Cut" class="w-full h-64 object-cover">
                 <div class="p-6">
                     <h4 class="font-bold text-xl mb-2 text-amber-600 uppercase italic">3. Crew Cut</h4>
-                    <p class="text-slate-500 text-sm">Short, masculine, and simple. Tidy appearance with very low maintenance.</p>
+                    <p class="text-slate-500 text-sm">Short, masculine, and simple. Tidy appearance with low maintenance.</p>
                 </div>
             </div>
+
+            <div class="min-w-[85%] md:min-w-[30%] bg-white rounded-2xl overflow-hidden shadow-lg border border-slate-100 scroll-item">
+                <img src="images/frenchcrop.jpg" alt="French Crop" class="w-full h-64 object-cover">
+                <div class="p-6">
+                    <h4 class="font-bold text-xl mb-2 text-amber-600 uppercase italic">4. French Crop</h4>
+                    <p class="text-slate-500 text-sm">Short top with fringe brushed forward. Modern and minimal.</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="flex justify-center md:hidden gap-2 mt-4">
+            <div class="w-8 h-1 bg-amber-500 rounded-full"></div>
+            <div class="w-2 h-1 bg-slate-200 rounded-full"></div>
+            <div class="w-2 h-1 bg-slate-200 rounded-full"></div>
         </div>
     </section>
 
