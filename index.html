@@ -11,12 +11,12 @@
         .gold-gradient { background: linear-gradient(135deg, #d4af37 0%, #f9e29c 100%); }
         .dark-bg { background-color: #0f172a; }
         .card-hover:hover { transform: translateY(-10px); transition: 0.4s ease; }
-        
-        /* Ensures the nav doesn't hide on small screens */
         @media (max-width: 640px) {
-            .nav-text { font-size: 0.65rem; letter-spacing: 0.05em; }
-            .nav-spacing { space-x: 3; }
+        .nav-text { 
+            font-size: 0.65rem; /* Decrease this (e.g., 0.6rem) if text overlaps */
+            letter-spacing: 0.02em; 
         }
+    }
     </style>
 </head>
 <body class="bg-slate-50 font-sans text-slate-900">
@@ -24,12 +24,12 @@
     <nav class="fixed w-full z-50 bg-white/95 backdrop-blur-md border-b border-slate-200 shadow-sm">
         <div class="max-w-6xl mx-auto px-4 py-3 flex justify-between items-center">
             <h1 class="text-xl md:text-2xl font-black tracking-tighter uppercase italic">Elite<span class="text-amber-600">Cuts</span></h1>
-            
-            <div class="flex items-center space-x-3 md:space-x-6 font-bold uppercase tracking-widest nav-text">
-                <a href="#catalogue" class="hover:text-amber-600 transition">Styles</a>
-                <a href="#pricing" class="hover:text-amber-600 transition">Price</a>
-                <a href="#contact" class="hidden xs:inline-block hover:text-amber-600 transition">Book</a>
-                <button onclick="openWhatsApp()" class="bg-slate-900 text-white px-3 py-2 md:px-5 md:py-2 rounded-lg hover:bg-amber-600 transition shadow-md text-[10px] md:text-xs">Book Now</button>
+            <div class="space-x-6 hidden md:flex items-center font-bold text-xs uppercase tracking-widest">
+                <a href="#catalogue" class="hover:text-amber-600">Catalogue</a>
+                <a href="#pricing" class="hover:text-amber-600">Services</a>
+                <a href="#products" class="hover:text-amber-600">Products</a>
+                <a href="#contact" class="hover:text-amber-600">Book</a>
+                <button onclick="openWhatsApp()" class="bg-slate-900 text-white px-5 py-2 rounded-lg hover:bg-amber-600 transition shadow-md">Book Now</button>
             </div>
         </div>
     </nav>
@@ -86,13 +86,13 @@
         </div>
         
         <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <div class="bg-white p-8 rounded-3xl shadow-xl border-2 border-amber-100 card-hover relative overflow-hidden text-center md:text-left">
+            <div class="bg-white p-8 rounded-3xl shadow-xl border-2 border-amber-100 card-hover relative overflow-hidden">
                 <div class="absolute top-0 right-0 bg-amber-500 text-white px-4 py-1 text-xs font-bold uppercase italic">Popular</div>
                 <i class="fas fa-chair text-4xl text-amber-600 mb-6"></i>
                 <h4 class="text-2xl font-black uppercase italic mb-2">Studio Session</h4>
                 <p class="text-slate-500 text-sm mb-6">Visit my private studio for a relaxed, fully-equipped grooming experience.</p>
                 <div class="text-3xl font-black text-slate-900 mb-6">RM 35.00 <span class="text-sm font-normal text-slate-400">/cut</span></div>
-                <ul class="text-sm space-y-3 mb-8 text-left inline-block md:block">
+                <ul class="text-sm space-y-3 mb-8">
                     <li><i class="fas fa-check text-green-500 mr-2"></i> Any Style Choice</li>
                     <li><i class="fas fa-check text-green-500 mr-2"></i> Hair Wash Included</li>
                     <li><i class="fas fa-check text-green-500 mr-2"></i> Premium Styling</li>
@@ -100,12 +100,12 @@
                 <button onclick="openWhatsApp()" class="w-full py-3 rounded-xl border-2 border-slate-900 font-bold hover:bg-slate-900 hover:text-white transition">Visit Studio</button>
             </div>
 
-            <div class="bg-slate-900 p-8 rounded-3xl shadow-xl text-white card-hover text-center md:text-left">
+            <div class="bg-slate-900 p-8 rounded-3xl shadow-xl text-white card-hover">
                 <i class="fas fa-car-side text-4xl text-amber-500 mb-6"></i>
                 <h4 class="text-2xl font-black uppercase italic mb-2">House Call</h4>
                 <p class="text-slate-400 text-sm mb-6">I bring the barbershop to your doorstep. Perfect for busy schedules in Sepang.</p>
                 <div class="text-3xl font-black text-white mb-6">RM 55.00 <span class="text-sm font-normal text-slate-500">/visit</span></div>
-                <ul class="text-sm space-y-3 mb-8 text-left inline-block md:block">
+                <ul class="text-sm space-y-3 mb-8">
                     <li><i class="fas fa-check text-amber-500 mr-2"></i> Transport Included (Sepang)</li>
                     <li><i class="fas fa-check text-amber-500 mr-2"></i> Clean Setup/Cleanup</li>
                     <li><i class="fas fa-check text-amber-500 mr-2"></i> Full Grooming Kit</li>
@@ -113,12 +113,12 @@
                 <button onclick="openWhatsApp()" class="w-full py-3 rounded-xl bg-amber-600 text-white font-bold hover:bg-amber-500 transition border-none">Book Home Visit</button>
             </div>
 
-            <div class="bg-white p-8 rounded-3xl shadow-xl border border-slate-100 card-hover text-center md:text-left">
+            <div class="bg-white p-8 rounded-3xl shadow-xl border border-slate-100 card-hover">
                 <i class="fas fa-graduation-cap text-4xl text-slate-400 mb-6"></i>
                 <h4 class="text-2xl font-black uppercase italic mb-2">Student Cut</h4>
                 <p class="text-slate-500 text-sm mb-6">Special rate for students (Valid ID required). Available for Studio Sessions only.</p>
                 <div class="text-3xl font-black text-slate-900 mb-6">RM 25.00 <span class="text-sm font-normal text-slate-400">/cut</span></div>
-                <ul class="text-sm space-y-3 mb-8 text-left inline-block md:block">
+                <ul class="text-sm space-y-3 mb-8">
                     <li><i class="fas fa-check text-green-500 mr-2"></i> Neat & Tidy Cuts</li>
                     <li><i class="fas fa-check text-green-500 mr-2"></i> Styling Tips</li>
                 </ul>
@@ -179,7 +179,7 @@
 
     <script>
         function openWhatsApp() {
-            // Using your actual number from the prompt
+            // Replace with your real Malaysia mobile number
             const yourPhoneNumber = "601139806763"; 
             const message = encodeURIComponent("Hi Elite Cuts! I'm interested in booking a session in Sepang/Selangor. Please let me know your availability.");
             window.open(`https://wa.me/${yourPhoneNumber}?text=${message}`, '_blank');
